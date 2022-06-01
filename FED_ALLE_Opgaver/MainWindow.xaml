@@ -1,0 +1,116 @@
+﻿<Window x:Class="FED_ALLE_Opgaver.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FED_ALLE_Opgaver"
+        xmlns:views="clr-namespace:FED_ALLE_Opgaver.Views"
+        xmlns:viewModels="clr-namespace:FED_ALLE_Opgaver.ViewModels"
+        mc:Ignorable="d"
+        Title="FED ALLE OPGAVER" 
+        Name="OpgaverMainWindow" 
+        FontSize="24" 
+        FontWeight="Bold" 
+        Height="950" 
+        Width="800" 
+        Background="#FF08D5EF"
+        WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <ContentControl Content="{ Binding}" Grid.Column="1" Margin="0,0,0,0" Grid.Row="1" Grid.RowSpan="13" Height="Auto" Width="Auto"/>
+        <Label x:Name="lblWindowAllExercises" 
+               Grid.Column="1" 
+               Content="F.E.D ALLE OPGAVER" 
+               VerticalContentAlignment="Center"               
+               VerticalAlignment="Top"
+               FontSize="35"
+               HorizontalAlignment="Center"
+               FontWeight="Bold"/>
+
+        <StackPanel Grid.Row="1" Margin="0,2,0,0">
+            <Button Grid.Row="1" 
+                    Name="btnBabynames" 
+                    Height="60" 
+                    Width="200"
+                    HorizontalAlignment="Left" Click="btnBabynames_Click"
+                    >
+                <Grid Width="180">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Image x:Name="BabyImage" 
+                           Source="Images/babynames.png" 
+                           HorizontalAlignment="Left"
+                           Height="auto"
+                           Width="73"
+                           Margin="0,0,0,0"
+                           />
+                    <TextBlock Text="EX2 &#x0a;Babynames"
+                               Grid.Column="1"
+                               HorizontalAlignment="Left"
+                               VerticalAlignment="Center"
+                               FontSize="20"/>
+                </Grid>           
+                
+            </Button>
+        </StackPanel> 
+        
+        <StackPanel Grid.Row="2" Margin="0,2,0,0">
+            <Button Grid.Row="2" 
+                    Name="btnBaby" 
+                    Height="60" 
+                    Width="200"
+                    HorizontalAlignment="Left"
+                    >
+                <Grid Width="180">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Image x:Name="LayoutPanImage" 
+                           Source="Images/LayoutPan.png" 
+                           HorizontalAlignment="Left"
+                           Height="auto"
+                           Width="73"
+                           Margin="0,0,0,0"
+                           />
+                    <TextBlock Text="EX3 &#x0a;LayoutPan"
+                               Grid.Column="2"
+                               HorizontalAlignment="Left"
+                               VerticalAlignment="Center"
+                               FontSize="20"/>
+                </Grid>           
+                
+            </Button>
+        </StackPanel>
+
+    </Grid>
+
+    <Window.Resources>
+        <DataTemplate x:Name="BabyNameTemplate" DataType="{x:Type viewModels:BabyNameViewModel}">
+            <views:BabyNameList>
+                
+            </views:BabyNameList>
+        </DataTemplate>
+    </Window.Resources>
+</Window>
